@@ -5,7 +5,7 @@ FROM golang:1.23-alpine AS builder
 WORKDIR /app
 
 # Копируем файлы зависимостей и скачиваем их (для кэширования)
-COPY go.mod go.sum ./
+COPY go.mod* go.sum* ./
 RUN go mod download
 
 # Копируем исходный код и собираем бинарный файл
