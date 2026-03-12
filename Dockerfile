@@ -10,7 +10,7 @@ RUN go mod download
 
 # Копируем исходный код и собираем бинарный файл
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o main ./cmd/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o main ./main.go
 
 # ЭТАП 2: Запуск (Final)
 FROM alpine:latest
